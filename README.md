@@ -2,6 +2,23 @@
 
 A powerful OpenClaw skill that allows you to manage your Docker infrastructure directly through your Portainer CE instance. Deploy stacks, inspect containers, and execute raw Docker commands without leaving your chat.
 
+## Requirements
+
+This skill uses a Python script to communicate with the Portainer API. You must ensure your OpenClaw environment has Python 3 installed along with the `requests` library.
+
+### Dockerfile Setup
+If you are building a custom OpenClaw image (recommended for persistence), add the following to your `Dockerfile`:
+
+```dockerfile
+# Install Python 3 and pip
+RUN apt-get update && apt-get install -y python3 python3-pip
+
+# Install required Python libraries
+RUN pip3 install requests --break-system-packages
+```
+
+*(Note: `--break-system-packages` is often required on newer Debian/Ubuntu versions like Bookworm to install packages globally via pip. Alternatively, use a virtual environment.)*
+
 ## Features
 
 - **Environment Management**: List and query all your Portainer environments (endpoints).
