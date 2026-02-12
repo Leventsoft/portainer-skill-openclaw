@@ -33,6 +33,7 @@ RUN pip3 install requests --break-system-packages
 
 - An active [Portainer CE](https://www.portainer.io/) instance.
 - An **API Access Token** from your Portainer user settings.
+  - [How to generate an API Access Token](https://docs.portainer.io/api/access)
 - OpenClaw installed and running.
 
 ## Installation
@@ -44,7 +45,8 @@ openclaw skill install https://github.com/Leventsoft/portainer-skill-openclaw
 ```
 
 ### 2. Configure Authentication
-Set your Portainer URL and API Key in the OpenClaw configuration:
+Set your Portainer URL and API Key in the OpenClaw configuration.
+See [Portainer API Access](https://docs.portainer.io/api/access) for details on generating a token.
 
 ```bash
 # Set your Portainer URL (include protocol and port if necessary)
